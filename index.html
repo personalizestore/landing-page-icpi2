@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEGUNDA ICPI PINHAL - Landing Page</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Site oficial da igreja SEGUNDA ICPI PINHAL. Veja nossos horários de cultos, localização, redes sociais e como contribuir com o reino de Deus.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo-container" id="church-logo-link">
+        <!-- Logo Image or Text Placeholder loaded via JS -->
+        <span class="logo-text" id="header-logo-text">SEGUNDA ICPI PINHAL</span>
+      </a>
+      <nav class="nav">
+        <a href="#cultos" class="nav-link">Cultos</a>
+        <a href="#contribuir" class="nav-link">Contribuição (Pix)</a>
+        <a href="#localizacao" class="nav-link">Onde Estamos</a>
+      </nav>
+      <div class="header-socials" id="header-socials">
+        <!-- Social Icons loaded via JS -->
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">Seja muito bem-vindo</span>
+        <h1 class="hero-title" id="hero-title">SEGUNDA ICPI PINHAL</h1>
+        <p class="hero-subtitle" id="hero-subtitle">
+          Um lugar de recomeço, comunhão e adoração ao nosso Senhor.
+        </p>
+        <div class="hero-actions">
+          <a href="#cultos" class="btn btn-primary">Ver Programação</a>
+          <a href="#contribuir" class="btn btn-secondary">Como Contribuir</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULES SECTION (CULTOS) -->
+  <section id="cultos" class="section cultos-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Programação</span>
+        <h2 class="section-title">Cultos da Semana</h2>
+        <p class="section-description">Participe conosco dos nossos encontros semanais. Estaremos de braços abertos para receber você e sua família.</p>
+      </div>
+      
+      <div class="cultos-grid" id="cultos-grid">
+        <!-- Culto Cards will be injected here dynamically by app.js -->
+        <div class="loading">Carregando horários...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRIBUTIONS SECTION (PIX) -->
+  <section id="contribuir" class="section contribuir-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Dízimos & Ofertas</span>
+        <h2 class="section-title">Contribua com a Obra</h2>
+        <p class="section-description">A sua generosidade ajuda a manter nossa igreja ativa e a expandir o Reino de Deus. Escolha abaixo uma das contas para contribuição via Pix Copia e Cola.</p>
+      </div>
+
+      <div class="pix-grid">
+        <!-- Pix Card 1: Geral -->
+        <div class="pix-card" id="pix-card-general">
+          <div class="pix-card-header">
+            <div class="pix-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pix-svg-icon"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="pix-card-title" id="pix-general-title">Dízimos e Ofertas (Geral)</h3>
+          </div>
+          
+          <div class="pix-card-body">
+            <div class="qr-container">
+              <!-- If QR Code image exists, it shows here, else placeholder -->
+              <img id="pix-general-qr" class="qr-image" src="" alt="QR Code Pix Geral" style="display: none;" onload="this.style.display='block'; document.getElementById('qr-placeholder-general').style.display='none';" onerror="this.style.display='none'; document.getElementById('qr-placeholder-general').style.display='flex';">
+              <div id="qr-placeholder-general" class="qr-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="qr-placeholder-icon"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01M7 12h10M12 7v10"/></svg>
+                <span>QR Code</span>
+              </div>
+            </div>
+            
+            <div class="pix-details">
+              <div class="pix-detail-row">
+                <span class="detail-label">Favorecido:</span>
+                <span class="detail-value" id="pix-general-owner">-</span>
+              </div>
+              <div class="pix-detail-row">
+                <span class="detail-label">Banco:</span>
+                <span class="detail-value" id="pix-general-bank">-</span>
+              </div>
+            </div>
+
+            <div class="pix-key-container">
+              <span class="pix-key-label">Chave Pix Copia e Cola:</span>
+              <div class="pix-key-box">
+                <input type="text" class="pix-key-input" id="pix-general-key-input" readonly value="">
+                <button class="btn-copy" id="btn-copy-general" aria-label="Copiar chave Pix">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                  <span>Copiar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pix Card 2: Construção -->
+        <div class="pix-card" id="pix-card-construction">
+          <div class="pix-card-header">
+            <div class="pix-icon-wrapper construction-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pix-svg-icon"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="pix-card-title" id="pix-construction-title">Campanha de Construção</h3>
+          </div>
+          
+          <div class="pix-card-body">
+            <div class="qr-container">
+              <!-- If QR Code image exists, it shows here, else placeholder -->
+              <img id="pix-construction-qr" class="qr-image" src="" alt="QR Code Pix Construção" style="display: none;" onload="this.style.display='block'; document.getElementById('qr-placeholder-construction').style.display='none';" onerror="this.style.display='none'; document.getElementById('qr-placeholder-construction').style.display='flex';">
+              <div id="qr-placeholder-construction" class="qr-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="qr-placeholder-icon"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01M7 12h10M12 7v10"/></svg>
+                <span>QR Code</span>
+              </div>
+            </div>
+
+            <div class="pix-details">
+              <div class="pix-detail-row">
+                <span class="detail-label">Favorecido:</span>
+                <span class="detail-value" id="pix-construction-owner">-</span>
+              </div>
+              <div class="pix-detail-row">
+                <span class="detail-label">Banco:</span>
+                <span class="detail-value" id="pix-construction-bank">-</span>
+              </div>
+            </div>
+
+            <div class="pix-key-container">
+              <span class="pix-key-label">Chave Pix Copia e Cola:</span>
+              <div class="pix-key-box">
+                <input type="text" class="pix-key-input" id="pix-construction-key-input" readonly value="">
+                <button class="btn-copy" id="btn-copy-construction" aria-label="Copiar chave Pix">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                  <span>Copiar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION / WHERE WE ARE SECTION -->
+  <section id="localizacao" class="section localizacao-section">
+    <div class="container location-container">
+      <div class="location-info">
+        <span class="section-tag">Onde Estamos</span>
+        <h2 class="section-title">Venha nos Visitar</h2>
+        <p class="location-intro">Nossa igreja está localizada em um local de fácil acesso em Espírito Santo do Pinhal. Junte-se a nós em nosso próximo culto!</p>
+        
+        <div class="address-card">
+          <div class="address-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="address-details">
+            <h4 class="address-title">Endereço</h4>
+            <p id="address-text">Carregando endereço...</p>
+          </div>
+        </div>
+
+        <a href="#" id="btn-maps" target="_blank" rel="noopener" class="btn btn-primary btn-maps">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+          Abrir no Google Maps / GPS
+        </a>
+      </div>
+      
+      <div class="location-visual">
+        <div class="map-placeholder">
+          <!-- A subtle background visual representation of maps or coordinates -->
+          <div class="map-grid"></div>
+          <div class="map-marker-glow"></div>
+          <div class="map-marker">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="marker-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOAST NOTIFICATION FOR COPY ACTION -->
+  <div id="toast" class="toast">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="toast-check-icon"><polyline points="20 6 9 17 4 12"/></svg>
+    <span class="toast-message">Chave Pix copiada com sucesso!</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-info">
+        <span class="footer-logo" id="footer-logo-text">SEGUNDA ICPI PINHAL</span>
+        <p class="footer-tagline">Uma igreja que ama a Deus e serve ao próximo.</p>
+      </div>
+      <div class="footer-links">
+        <h4 class="footer-title">Redes Sociais</h4>
+        <div class="footer-social-icons" id="footer-socials">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p>&copy; <span id="current-year">2026</span> SEGUNDA ICPI PINHAL. Todos os direitos reservados.</p>
+        <p class="dev-credits">Desenvolvido com carinho</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
